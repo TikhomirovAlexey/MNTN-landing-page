@@ -261,17 +261,20 @@ body {
   width: 100%;
   background-repeat: no-repeat;
   background-position: left;
+  z-index: -1;
 }
 .background-box__top {
   background-image: linear-gradient(-12.53deg, rgba(11, 29, 38, 0) 31.055%, rgb(11, 29, 38) 108.93%), url(../img/top-bg.png);
   height: 1513px;
   top: -400px;
+  position: fixed;
 }
 .background-box__middle {
   background-image: url(../img/medium-bg.png);
   height: 1422px;
   top: 350px;
-  background-position: bottom center;
+  background-position: center;
+  position: fixed;
 }
 .background-box__bottom {
   background-image: url(../img/bottom-bg.png);
