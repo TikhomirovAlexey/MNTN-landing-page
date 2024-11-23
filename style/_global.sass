@@ -1,0 +1,47 @@
+// TODO: сделать фокус
+:where( a, button ):focus-visible
+    background-color: red
+
+:where( a, button)
+    transition-duration: 0.3s
+
+.visually-hidden
+    @include visually-hidden
+
+body
+    font-family: $font-family-main
+    background-color: $c-dark
+    color: $c-lite
+
+.container
+    max-width: calc( $site-width + $padding-inline * 2 )
+    padding-inline: $padding-inline
+    margin-inline: auto
+
+.title, .subtitle
+    font-family: $font-family-accent
+    font-weight: 600
+
+.title
+    font-size: 88px
+    line-height: 1.14
+
+.subtitle
+    font-size: 64px
+    line-height: 1.2
+
+.text, .link
+    font-size: 18px
+    font-weight: 700
+
+.text
+    line-height: 1.77
+
+.link
+    line-height: 1.2
+
+.section:nth-of-type(even)
+    flex-direction: row-reverse
+
+.section:not(:first-child)
+    margin-top: 200px

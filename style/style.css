@@ -1,0 +1,285 @@
+@charset "UTF-8";
+/**
+ * Нормализация блочной модели
+ * */
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+/**
+ * Убираем внутренние отступы слева тегам списков,
+ * у которых есть атрибут class
+ * */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+ * Убираем внешние отступы body и двум другим тегам,
+ * у которых есть атрибут class
+ * */
+body, :where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+ * Убираем внешние отступы вертикали нужным тегам,
+ * у которых есть атрибут class
+ * */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+ * Убираем стандартный маркер маркированному списку,
+ * у которого есть атрибут class
+ * */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+ * Обнуляем вертикальные внешние отступы параграфа
+ * */
+p {
+  margin-block: 0;
+}
+
+/**
+ * Упрощаем работу с изображениями
+ * */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+ * Наследуем свойства шрифт для полей ввода
+ * */
+input, textarea, select, button {
+  font: inherit;
+}
+
+/**
+ * Пригодится в большинстве ситуаций
+ * (когда, например, нужно будет "прижать" футер к низу сайта)
+ * */
+html {
+  height: 100%;
+}
+
+/**
+ * Плавный скролл
+ * */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+/**
+ * Пригодится в большинстве ситуаций
+ * (когда, например, нужно будет "прижать" футер к низу сайта)
+ * */
+/**
+ * Унифицированный интерлиньяж
+ * */
+body {
+  min-height: 100%;
+  line-height: 1.5;
+}
+
+/**
+ * Приводим к единому цвету svg-элементы
+ * */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+ * Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ * */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+ * Удаляем все анимации и переходы для людей,
+ * которые предпочитают их не использовать
+ * */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/**
+ * Упрощаем работу с ссылками
+ * */
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+/**
+ * Сбрасываем стандартные стили кнопакам, у которых есть класс
+ * */
+:where(button[class]) {
+  background-color: transparent;
+  border: none;
+}
+
+/**
+ *  убираем стандартную фокус-линию
+ *  */    
+:where(a, button) {
+  outline: none;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Chronicle Display";
+  src: url("../fonts/ChronicleDisplay-Semi.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+:where(a, button):focus-visible {
+  background-color: red;
+}
+
+:where(a, button) {
+  transition-duration: 0.3s;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+          clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+body {
+  font-family: Gilroy, sans-serif;
+  background-color: #0B1D26;
+  color: #FFF;
+}
+
+.container {
+  max-width: 1526px;
+  padding-inline: 32px;
+  margin-inline: auto;
+}
+
+.title, .subtitle {
+  font-family: "Chronicle Display", sans-serif;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 88px;
+  line-height: 1.14;
+}
+
+.subtitle {
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+.text, .link {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.text {
+  line-height: 1.77;
+}
+
+.link {
+  line-height: 1.2;
+}
+
+.section:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.section:not(:first-child) {
+  margin-top: 200px;
+}
+
+.background-box {
+  position: absolute;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.background-box__top {
+  background-image: linear-gradient(-12.53deg, rgba(11, 29, 38, 0) 31.055%, rgb(11, 29, 38) 108.93%), url(../img/top-bg.png);
+  height: 1513px;
+  top: -400px;
+}
+.background-box__middle {
+  background-image: url(../img/medium-bg.png);
+  height: 1422px;
+  top: 350px;
+  background-position: bottom center;
+}
+.background-box__bottom {
+  background-image: url(../img/bottom-bg.png);
+  height: 926px;
+  top: 700px;
+}
+.background-box__bottom-gradient {
+  background-image: linear-gradient(180deg, rgba(11, 29, 38, 0), rgb(11, 29, 38) 61.384%);
+  height: 700px;
+  top: 1070px;
+}/*# sourceMappingURL=style.css.map */
