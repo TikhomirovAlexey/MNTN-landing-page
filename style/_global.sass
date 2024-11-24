@@ -1,6 +1,6 @@
 // TODO: сделать фокус
 :where( a, button ):focus-visible
-    background-color: red
+    background-color: $c-accent
 
 :where( a, button)
     transition-duration: 0.3s
@@ -8,40 +8,71 @@
 .visually-hidden
     @include visually-hidden
 
+.overflow-hidden
+    overflow: hidden
+
+.desctop-hidden
+    display: none
+
+.desctop-visible
+    display: block
+
+.is-hidden
+    display: none
+
 body
     font-family: $font-family-main
     background-color: $c-dark
     color: $c-lite
+    width: min(100%, $max-width-container)
+    margin-inline: auto
 
 .container
     max-width: calc( $site-width + $padding-inline * 2 )
     padding-inline: $padding-inline
     margin-inline: auto
 
-.title, .subtitle
-    font-family: $font-family-accent
-    font-weight: 600
-
 .title
+    @extend %family-accent
     font-size: 88px
     line-height: 1.14
 
 .subtitle
+    @extend %family-accent
     font-size: 64px
     line-height: 1.2
 
-.text, .link
-    font-size: 18px
-    font-weight: 700
-
 .text
+    @extend %font-text
     line-height: 1.77
 
 .link
-    line-height: 1.2
+    @extend %link-style
+    @include hover
+        color: $c-accent
+
+.button
+    @extend %link-style
+    @include hover
+        color: $c-accent
+    &_flex
+        @include flex(10px)
+    &_menu
+        @extend %icon-size
+        @include flex-column-center(10px)
+    &_close
+        @extend %icon-size
+        @include flex(0px, center)
+        position: relative
 
 .section:nth-of-type(even)
     flex-direction: row-reverse
 
 .section:not(:first-child)
     margin-top: 200px
+
+.logo
+    @extend %family-accent
+    font-size: 32px
+    line-height: 1
+    letter-spacing: 1px

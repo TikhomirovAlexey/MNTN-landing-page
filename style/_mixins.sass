@@ -19,7 +19,7 @@
             @content
 
 @mixin fluid-block($min, $max)
-    width: clamp(#{$min}px, #{calc( $max / 1440 * 100 )}vw, #{$max}px)
+    width: clamp(#{$min}px, #{calc( $max / $width-layout * 100 )}vw, #{$max}px)
 
 @mixin flex($c-gap: 16px, $j-content: flex-start, $a-items: center)
     display: flex
@@ -31,3 +31,16 @@
     display: flex
     flex-direction: column
     row-gap: $row-gap
+
+@mixin flex-column-center($row-gap: 16px)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    row-gap: $row-gap
+
+@mixin center-absolute
+    top: 50%
+    left: 50%
+    translate: -50% -50%
+    
