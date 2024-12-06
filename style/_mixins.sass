@@ -19,7 +19,10 @@
             @content
 
 @mixin fluid-block($min, $max)
-    width: clamp(#{$min}px, #{calc( $max / $width-layout * 100 )}vw, #{$max}px)
+    width: clamp(#{$min}px, #{calc( $max / $width-for-fluid * 100 )}vw, #{$max}px)
+
+@mixin fluid-text($min, $max)
+    font-size: clamp(#{$min}px, #{calc( $max / $width-for-fluid * 100 )}vw, #{$max}px)
 
 @mixin flex($c-gap: 16px, $j-content: flex-start, $a-items: center)
     display: flex

@@ -1,3 +1,12 @@
+@media (width <= 1400px)
+
+    .title
+        @include fluid-text(34, 88)
+
+    .hero
+        &__body
+            @include fluid-block(300, 950)
+
 @media (width <= 1024px)
 
     .background
@@ -8,6 +17,16 @@
     .header
         &__inner
             padding: 40px $padding-inline
+
+    .hero
+        padding-inline: $padding-inline
+        &__header
+            row-gap: 28px
+            margin-bottom: 28px
+
+    .preface
+        font-size: 16px
+        letter-spacing: 5px
 
 @media (width <= 768px)
 
@@ -26,7 +45,14 @@
         &__inner
             padding-inline: $padding-inline-mobile
 
+    .hero
+        padding-inline: $padding-inline-mobile
+        &__body
+            width: 100%
+        &__header
+            row-gap: 18px
+            margin-bottom: 18px
 
-
-
-                
+    .preface
+        font-size: 14px
+        letter-spacing: 4px

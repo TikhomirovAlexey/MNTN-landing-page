@@ -36,6 +36,7 @@ body
     @extend %family-accent
     font-size: 88px
     line-height: 1.14
+    text-transform: capitalize 
 
 .subtitle
     @extend %family-accent
@@ -45,11 +46,15 @@ body
 .text
     @extend %font-text
     line-height: 1.77
+    &_vertical
+        writing-mode: vertical-lr
 
 .link
     @extend %link-style
     @include hover
         color: $c-accent
+    &_flex
+        @include flex
 
 .button
     @extend %link-style

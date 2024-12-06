@@ -12,13 +12,13 @@
             height: 1513px
             top: -400px
             position: fixed
-        &_middle    
+        &_middle
             background-image: url(../img/medium-bg.webp)
             height: 1422px
             top: 350px
-            background-position: center 
+            background-position: center
             position: fixed
-        &_bottom  
+        &_bottom
             background-image: url(../img/bottom-bg.webp)
             height: 926px
             top: 700px
@@ -74,4 +74,45 @@
     &_close-icon-rotate-reverse
         rotate: -45deg
 
-        
+.social-media
+    &__inner
+        @include flex-column(28px)
+        &_mobile
+            flex-direction: row
+            gap: 18px
+    &__link
+        display: flex
+        @include hover
+            color: $c-accent
+    &_mobile
+        position: absolute
+        left: 18px
+        bottom: 18px
+
+.hero
+    margin-top: 198px
+    padding-inline: 80px
+    display: grid
+    grid-template-columns: auto 1fr
+    align-items: center
+    &__body
+        max-width: 950px
+        justify-self: center
+    &__header
+        @include flex-column(32px)
+        margin-bottom: 32px
+
+.preface
+    color: $c-accent
+    font-size: 18px
+    font-weight: 800
+    line-height: 1.2
+    letter-spacing: 6px
+    text-transform: uppercase
+    @include flex(1.8em)
+    &::before
+        content: ''
+        display: block
+        width: 4em
+        height: 2px
+        background-color: $c-accent
