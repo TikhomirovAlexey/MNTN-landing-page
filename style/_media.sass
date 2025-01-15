@@ -10,6 +10,10 @@
         &__body
             @include fluid-block(300, 950)
 
+    .footer
+        &__info
+            column-gap: 106px
+
 @media (width <= 1024px)
 
     .background
@@ -48,6 +52,13 @@
                 bottom: 78%
                 right: 88%
 
+    .footer
+        padding-block: 120px 50px
+        &__body
+            flex-direction: column
+            align-items: center
+            row-gap: 120px
+
 @media (width <= 768px)
 
     .background
@@ -60,6 +71,12 @@
 
     .desctop-visible
         display: none
+
+    .container
+        padding-inline: $padding-inline-mobile
+
+    .text
+        font-size: 16px
 
     .header
         &__inner
@@ -83,3 +100,7 @@
             &::before
                 display: none
 
+    .footer
+        &__info
+            flex-direction: column
+            row-gap: 60px

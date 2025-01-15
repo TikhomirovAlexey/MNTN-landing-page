@@ -36,18 +36,27 @@ body
     @extend %family-accent
     font-size: 88px
     line-height: 1.14
-    text-transform: capitalize 
+    text-transform: capitalize
 
 .subtitle
     @extend %family-accent
     font-size: 64px
     line-height: 1.2
 
+.heading
+    color: $c-accent
+    font-size: 24px
+    font-weight: 700
+    line-height: 1.33
+
 .text
     @extend %font-text
     line-height: 1.77
     &_vertical
         writing-mode: vertical-lr
+    &_copyright
+        opacity: 0.5
+        font-weight: 500
 
 .link
     @extend %link-style
@@ -55,6 +64,8 @@ body
         color: $c-accent
     &_flex
         @include flex
+    &_skinny
+        font-weight: 500
 
 .button
     @extend %link-style

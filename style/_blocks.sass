@@ -160,3 +160,21 @@
         @include hover
             color: $c-lite
 
+.footer
+    background-color: $c-dark
+    padding-block: 200px 50px
+    &__body
+        @include flex(28px, space-between, stretch)
+    &__hero
+        @include flex-column
+        justify-content: space-between
+    &__text
+        margin-top: 24px
+        max-width: 304px
+    &__info
+        @include flex($c-gap:212px, $a-items:flex-start)
+    &__list
+        margin-top: 24px
+        @include flex-column(16px)
+    &__link
+        display: block
