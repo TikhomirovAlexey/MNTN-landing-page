@@ -3,6 +3,9 @@
     .title
         @include fluid-text(34, 88)
 
+    .subtitle
+        @include fluid-text(28, 64)
+
     .hero
         &__body
             @include fluid-block(300, 950)
@@ -27,6 +30,23 @@
     .preface
         font-size: 16px
         letter-spacing: 5px
+
+    .main
+        margin-top: 800px
+
+    .section
+        flex-direction: column-reverse
+        row-gap: 120px
+        &:nth-of-type(even) 
+            flex-direction: column-reverse
+        &:not(:first-child)
+            margin-top: 120px
+        &__info
+            margin-left: 0
+            &::before
+                @include fluid-text(120, 240)
+                bottom: 78%
+                right: 88%
 
 @media (width <= 768px)
 
@@ -56,3 +76,10 @@
     .preface
         font-size: 14px
         letter-spacing: 4px
+
+    .section
+        row-gap: 60px
+        &__info
+            &::before
+                display: none
+

@@ -1,12 +1,12 @@
 .background
     position: relative
     margin-inline: auto
+    z-index: -1
     &__box
         position: absolute
         width: min(100%, $max-width-container)
         background-repeat: no-repeat
         background-position: left
-        z-index: -1
         &_top
             background-image: linear-gradient(-12.53deg, rgba(11, 29, 38, 0) 31.055%,rgb(11, 29, 38) 108.93%), url(../img/top-bg.webp)
             height: 1513px
@@ -116,3 +116,47 @@
         width: 4em
         height: 2px
         background-color: $c-accent
+
+.main
+    margin-top: 700px
+    background: $c-dark
+    background: linear-gradient(0deg, rgba(11,29,38,1) 90%, rgba(105,108,255,0) 95%)
+    counter-reset: number
+
+.section
+    @include flex(24px)
+    counter-increment: number
+    &:nth-of-type(even) 
+        flex-direction: row-reverse
+    &:nth-of-type(even) > &__body
+        justify-content: end
+    &:not(:first-child)
+        margin-top: 200px
+    &__body
+        flex-grow: 1
+        flex-shrink: 0
+        @include flex(0, center)
+    &__info
+        margin-left: 17%
+        max-width: 632px
+        @include flex-column($row-gap: 28px)
+        align-items: start
+
+        position: relative
+
+        &::before
+            content: counter(number, decimal-leading-zero)
+            color: $c-lite
+            font-size: 240px
+            font-weight: 700
+            line-height: 1
+            opacity: 0.1
+
+            position: absolute
+            bottom: 74%
+            right: clamp(250px, #{calc( 542 / 1800 * 100 )}vw, 542px)
+    &__link
+        color: $c-accent
+        @include hover
+            color: $c-lite
+
