@@ -1,8 +1,8 @@
-// TODO: сделать фокус
 :where( a, button ):focus-visible
-    background-color: $c-accent
+    border: 3px solid $c-accent
+    border-radius: 5px
 
-:where( a, button)
+:where( a, button):not(:focus-visible)
     transition-duration: 0.3s
 
 .visually-hidden

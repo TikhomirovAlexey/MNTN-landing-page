@@ -209,10 +209,11 @@ a {
 }
 
 :where(a, button):focus-visible {
-  background-color: #FBD784;
+  border: 3px solid #FBD784;
+  border-radius: 5px;
 }
 
-:where(a, button) {
+:where(a, button):not(:focus-visible) {
   transition-duration: 0.3s;
 }
 
